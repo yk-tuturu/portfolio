@@ -4,6 +4,7 @@ import Typewriter from './components/Typewriter';
 import Background from './components/Background';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
+import Projects from './components/Projects';
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Navbar></Navbar>
           <Hero></Hero>
           <TechStack></TechStack>
+          <Projects></Projects>
       </div>
       </div>
       

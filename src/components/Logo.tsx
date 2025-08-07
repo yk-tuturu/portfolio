@@ -28,7 +28,7 @@ const Logo: React.FC<LogoProps> = ({name, source}) => {
                 ref={imgRef}
                 />
             {
-                hovered ? <p className={hovered ? "caption font-16 hover" : "caption font-16"}>{name}</p> : <></>
+                <p className={hovered ? "caption font-16 hover" : "caption font-16"}>{name}</p>
             }
            
         </div>
