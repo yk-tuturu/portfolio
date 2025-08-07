@@ -61,7 +61,7 @@ function Background() {
         // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(125, 156, 204, 0.4)";
+        ctx.fillStyle = "rgba(125, 156, 204, 0.7)";
         ctx.fill();
       }
 
@@ -73,7 +73,7 @@ function Background() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < MAX_DISTANCE) {
-            ctx.strokeStyle = `rgba(125, 156, 204, ${(1 - dist / MAX_DISTANCE) * 0.5})`;
+            ctx.strokeStyle = `rgba(125, 156, 204, ${(1 - dist / MAX_DISTANCE) * 0.8})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);

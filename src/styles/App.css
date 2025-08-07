@@ -1,18 +1,16 @@
 #root {
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
+  width: 100%;
 }
 
 @font-face {
   font-family: 'Outfit'; /* Name you'll use in CSS */
-  src: url('./assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  src: url('/fonts/Outfit-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
 }
 
 .main {
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,25 +19,35 @@
 
 .content {
   /* background-color: rgba(90, 82, 111, 0.092); */
-  height: 100%;
   min-height: 100vh;
-  width: 60%;
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Outfit";
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  padding: 0px 32px;
+  margin-bottom: 64px;
 }
 
 p {
   margin: 16px 0px;
 }
 
+
+/* UTILITY */
+/* font sizes */
 .font-16 {
   font-size: 16px;
 }
 
 .font-24 {
   font-size: 24px;
+}
+
+.font-28 {
+  font-size: 28px;
 }
 
 .font-32 {
@@ -62,6 +70,31 @@ p {
   font-size: 128px;
 }
 
+/* font weights */ 
+.extra-light {
+  font-weight: 200;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #acb5c5;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
 .animated {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
@@ -76,14 +109,3 @@ p {
   transform: translateY(0);
 }
 
-.hero {
-  display: grid;
-  grid-template-columns: 7fr 5fr;
-  margin-top: 36px;
-}
-
-.waikei {
-  line-height: 128px;
-  margin: 0px;
-  font-weight: bold;
-}

@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from "react";
-import "../typewriter.css";
+import "../styles/typewriter.css";
 
 type TypewriterProps = {
     showContent: ()=>void;
