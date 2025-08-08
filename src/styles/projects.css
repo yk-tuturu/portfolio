@@ -6,10 +6,18 @@
 }
 
 .project-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+}
+
+.project-pair {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 16px;
-    width: 100%;
+    column-gap: 24px;
+    height: 250px;
 }
 
 .tabs {
@@ -51,7 +59,7 @@
 .project-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 12px;
 }
 
@@ -64,6 +72,8 @@
 .project-desc a {
     color: #66C4FF;
     font-weight: 300;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .project-tag-container {
@@ -71,4 +81,5 @@
     flex-direction: row;
     justify-content: start;
     align-items: center;
+    margin-top: 16px;
 }

@@ -33,6 +33,13 @@
     margin-right: 16px;
 }
 
+.small-tag {
+  background-color: #678BC3;
+    border-radius: 24px;
+    padding: 4px 16px;
+    margin-right: 16px;
+}
+
 .tagList {
     display: flex;
     flex-direction: row;

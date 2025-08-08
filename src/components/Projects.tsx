@@ -1,10 +1,36 @@
 import React, {useState, useEffect} from "react";
 import "../styles/projects.css";
-import Tag from "./Tag";
+import Project from "./Project";
 
+type Project = {
+  title: string;
+  desc: string;
+  imageURL: string;
+  alt: string;
+  tags: string[];
+};
+
+type Category = "Web" | "Mobile" | "Games"
+
+type ProjectCategories = Record<Category, Project[]>
 function Projects() {
-    const tabNames = ['Web', 'Mobile', 'Games'];
-    const [activeTab, setActiveTab] = useState<string>('Web');
+    const tabNames: Category[] = ['Web', 'Mobile', 'Games'];
+    const [activeTab, setActiveTab] = useState<Category>('Web');
+
+    const projects: ProjectCategories = {
+        Web: [
+            {
+                title: "Source Academy Minigame System",
+                desc: "Designed a programming-based minigame system that integrates with existing game structure seamlessly",
+                imageURL: "https://i.imgur.com/bJ5PrKf.png",
+                alt: "A picture of a maze puzzle in Source Academy",
+                tags: ["React", "TypeScript", "Elixir"]
+            }
+
+        ],
+        Mobile: [],
+        Games: []
+    }
 
     return <div className="mt-5 project-container">
         <p className="font-48 bold margin-0 mt-5">My Projects</p>
@@ -16,16 +42,22 @@ function Projects() {
             ))}
         </div>
         <div className="project-grid">
-            <img src="https://i.imgur.com/bJ5PrKf.png" alt="A picture of a maze in Source Academy" className="project-image"></img>
-            <div className="project-desc">
-                <p className="font-28 bold margin-0">Project Name</p>
-                <p className="font-16 light margin-0 mt-2">This is the short project description text that tells you what you need to know, a couple of buzzwords, etc etc. Just random words like that. </p>
-                <p className="margin-0 mt-2"><a>Read more &gt;&gt;</a></p>
-                <div className="project-tag-container">
-                    <Tag name="React" size="16px"></Tag>
-                </div>
-                
-            </div>
+            
+            {
+                projects[activeTab].map((project, index)=> {
+                    return (
+                        <Project
+                            key={index}
+                            title={project.title}
+                            desc={project.desc}
+                            imageURL={project.imageURL}
+                            alt={project.alt}
+                            tags={project.tags}
+                            reverse={index % 2 === 1}
+                        />
+                    )
+                })
+            }
         </div>
     </div>
 }
