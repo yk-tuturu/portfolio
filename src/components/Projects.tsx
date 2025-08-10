@@ -1,6 +1,8 @@
-import React, {useState, useEffect} from "react";
+import {useState, forwardRef} from "react";
 import "../styles/projects.css";
 import Project from "./Project";
+import FadeUp from "./animators/FadeUp";
+import SlideLeft from "./animators/SlideLeft";
 
 type Project = {
   title: string;
@@ -13,7 +15,8 @@ type Project = {
 type Category = "Web" | "Mobile" | "Games"
 
 type ProjectCategories = Record<Category, Project[]>
-function Projects() {
+
+const Projects = forwardRef<HTMLDivElement, {}>((props, ref) => {
     const tabNames: Category[] = ['Web', 'Mobile', 'Games'];
     const [activeTab, setActiveTab] = useState<Category>('Web');
 
@@ -43,7 +46,7 @@ function Projects() {
             {
                 title: "This Website",
                 desc: "Yes. The website you are looking at right now.",
-                imageURL: "https://i.imgur.com/Mn68L7Q.png",
+                imageURL: "https://i.imgur.com/YJXlzMO.png",
                 alt: "A picture of my portfolio website",
                 tags: ["React", "TypeScript"]
             }
@@ -83,7 +86,7 @@ function Projects() {
         ]
     }
 
-    return <div className="mt-5 project-container">
+    return <div className="mt-5 project-container" ref={ref}>
         <p className="font-48 bold margin-0 mt-5">My Projects</p>
         <div className="tabs font-24 mt-2">
             {tabNames.map((name) => (
@@ -93,11 +96,11 @@ function Projects() {
             ))}
         </div>
         <div className="project-grid">
-            
             {
                 projects[activeTab].map((project, index)=> {
                     return (
-                        <Project
+                        <SlideLeft invert={index % 2 === 0} threshold={0.3}>
+                            <Project
                             key={index}
                             title={project.title}
                             desc={project.desc}
@@ -106,11 +109,13 @@ function Projects() {
                             tags={project.tags}
                             reverse={index % 2 === 1}
                         />
+                        </SlideLeft>
+                        
                     )
                 })
             }
         </div>
     </div>
-}
+})
 
 export default Projects;

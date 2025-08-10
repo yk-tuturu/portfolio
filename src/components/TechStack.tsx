@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import {forwardRef} from "react";
 import "../styles/TechStack.css"
 import { sprites } from "../Logos";
 import Logo from "./Logo";
@@ -14,7 +14,7 @@ type Category = "frontend" | "backend" | "other";
 
 type LogoCategories = Record<Category, Logo[]>
 
-function TechStack() {
+const TechStack = forwardRef<HTMLDivElement, {}>((props, ref) => {
     const logos: LogoCategories = {
         frontend: [
             {
@@ -32,78 +32,69 @@ function TechStack() {
             {
                 name: "NodeJS",
                 source: sprites.node
-            }
+            }, 
+            { name: "Express", source: sprites.express},
+            { name: "MySQL", source: sprites.mysql},
+            { name: "MongoDB", source: sprites.mongodb}
         ],
         other: [
             {
                 name: "Git",
                 source: sprites.git
-            }
+            },
+            { name: "GitHub", source: sprites.githubWhite},
+            { name: "Unity", source: sprites.unity},
+            { name: "FMOD", source: sprites.fmod}
         ]
     }
-    return <>
-        <div className="techstack-container">
+    return (
+        <div className="techstack-container" ref={ref}>
             <FadeUp>
                 <p className="font-48 bold">My Tech Stack</p>
             </FadeUp>
             
-            <FadeUp>
+            <FadeUp delay={0.2}>
                 <p className="font-32 bold subtitle margin-0">Frontend</p>
             </FadeUp>
             
             <div className="tech-container">
-                {/* <Logo name="React" source={sprites.react}></Logo>
-                <Logo name="HTML5" source={sprites.html}></Logo>
-                <Logo name="CSS" source={sprites.css}></Logo>
-                <Logo name="JavaScript" source={sprites.jsLogo}></Logo>
-                <Logo name="TypeScript" source={sprites.tsLogo}></Logo>
-                <Logo name="Bootstrap" source={sprites.bootstrap}></Logo>
-                <Logo name="Figma" source={sprites.figma}></Logo> */}
                 {
-                    logos.frontend.map((logo) => (
-                        <SlideLeft>
+                    logos.frontend.map((logo, index) => (
+                        <SlideLeft key={logo.name} delay={0.05 * index}>
                             <Logo name={logo.name} source={logo.source}></Logo>
                         </SlideLeft>
                     ))
                 }
             </div>
 
-            <FadeUp>
+            <FadeUp delay={0.2}>
                 <p className="font-32 bold subtitle margin-0">Backend</p>
             </FadeUp>
             
             <div className="tech-container">
-                {/* <Logo name="NodeJS" source={sprites.node}></Logo>
-                <Logo name="Express" source={sprites.express}></Logo>
-                <Logo name="MySQL" source={sprites.mysql}></Logo>
-                <Logo name="MongoDB" source={sprites.mongodb}></Logo> */}
                 {
-                    logos.backend.map((logo) => (
-                        <SlideLeft>
+                    logos.backend.map((logo, index) => (
+                        <SlideLeft key={logo.name} delay={0.05 * index}>
                             <Logo name={logo.name} source={logo.source}></Logo>
                         </SlideLeft>
                     ))
                 }
             </div>
-            <FadeUp>
+            <FadeUp delay={0.2}>
                 <p className="font-32 bold subtitle margin-0">Others</p>
             </FadeUp>
             
             <div className="tech-container">
-                {/* <Logo name="Git" source={sprites.git}></Logo>
-                <Logo name="GitHub" source={sprites.github}></Logo>
-                <Logo name="Unity" source={sprites.unity}></Logo>
-                <Logo name="FMOD" source={sprites.fmod}></Logo> */}
                 {
-                    logos.other.map((logo) => (
-                        <SlideLeft>
+                    logos.other.map((logo, index) => (
+                        <SlideLeft key={logo.name} delay={0.05 * index}>
                             <Logo name={logo.name} source={logo.source}></Logo>
                         </SlideLeft>
                     ))
                 }
             </div>
         </div>
-    </>
-}
+    )
+})
 
 export default TechStack;

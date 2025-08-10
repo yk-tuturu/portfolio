@@ -1,8 +1,7 @@
-import React, {useState, useEffect, useRef} from "react";
+import {useState, useEffect, useRef, forwardRef} from "react";
 import { sprites } from "../Logos";
 import "../styles/career.css"
 import Job from "./Job";
-import ScrollAnimate from "./ScrollAnimate";
 
 type JobInfo = {
     employer: string;
@@ -12,16 +11,11 @@ type JobInfo = {
     imgURL: string;
 }
 
-type Coordinate = {
-    x: number;
-    y: number;
-}
-
 type MeasurableBoxHandle = {
   getImageRect: () => DOMRect | null;
 };
 
-function Experience() {
+const Experience = forwardRef<HTMLDivElement, {}>((props, ref) => {
     const jobs: JobInfo[] = [
         {
             employer: "School Of Computing, NUS",
@@ -86,7 +80,7 @@ function Experience() {
 
     return <>
         
-        <div className="career-parent">
+        <div className="career-parent" ref={ref}>
             
             <p className="font-48 bold margin-0">Work Experience</p>
             <div className="timeline-parent" ref={parentRef}>
@@ -116,6 +110,6 @@ function Experience() {
             </div>
         </div>
     </>
-}
+})
 
 export default Experience;

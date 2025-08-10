@@ -3,12 +3,14 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 type FadeUpProps = {
     children?: React.ReactNode;
+    threshold?: number;
+    delay?: number;
 }
 
-const FadeUp: React.FC<FadeUpProps> = ({children}) => {
+const FadeUp: React.FC<FadeUpProps> = ({children, threshold=0.7, delay=0}) => {
     const ref = useRef<HTMLDivElement>(null);
     const controls = useAnimation();
-    const isInView = useInView(ref, { amount: 0.5 }); 
+    const isInView = useInView(ref, { amount: threshold }); 
 
     useEffect(() => {
         if (isInView) {
@@ -22,8 +24,8 @@ const FadeUp: React.FC<FadeUpProps> = ({children}) => {
         <motion.div
             ref={ref}
             variants={{
-                visible: { opacity: 1, y: 0, transition: { delay: 0.3 } },
-                hidden: { opacity: 0, y: 50, transition: { delay: 0.3 } },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: delay, ease: "easeIn" } },
+                hidden: { opacity: 0, y: 30, transition: { duration: 0.5, delay: delay, ease: "easeIn" } },
             }}
             initial="hidden"
             animate={controls}

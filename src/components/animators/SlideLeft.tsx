@@ -3,12 +3,15 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 type SlideLeftProps = {
     children?: React.ReactNode;
+    delay?: number;
+    threshold?: number;
+    invert?: boolean;
 }
 
-const SlideLeft: React.FC<SlideLeftProps> = ({children}) => {
+const SlideLeft: React.FC<SlideLeftProps> = ({children, delay = 0, threshold=0.7, invert=false}) => {
     const ref = useRef<HTMLDivElement>(null);
     const controls = useAnimation();
-    const isInView = useInView(ref, { amount: 0.7 }); 
+    const isInView = useInView(ref, { amount: threshold}); 
 
     useEffect(() => {
         if (isInView) {
@@ -22,8 +25,8 @@ const SlideLeft: React.FC<SlideLeftProps> = ({children}) => {
         <motion.div
             ref={ref}
             variants={{
-                visible: { opacity: 1, x: 0, transition: { delay: 0.3 } },
-                hidden: { opacity: 0, x: 50, transition: { delay: 0.3 } },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: delay, ease: "easeIn" } },
+                hidden: { opacity: 0, x: invert ? -50 : 50, transition: { duration: 0.5, delay: delay, ease: "easeIn" } },
             }}
             initial="hidden"
             animate={controls}

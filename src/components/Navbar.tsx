@@ -1,12 +1,19 @@
 import React, {useState, useEffect, useRef} from "react";
-import "../styles/navbar.css"
+import "../styles/navbar.css";
 
-function Navbar() {
+type NavbarProps = {
+    activeIndex: number;
+}
+
+const Navbar: React.FC<NavbarProps> = ({activeIndex}) => {
+    const tabs = ["Home", "Experience", "Skills", "Projects", "Contact"];
     return <>
-        <div className="navbar font-16">
-            <div className="navbar-item active">Home</div>
-            <div className="navbar-item">Project</div>
-            <div className="navbar-item">Contact</div>
+        <div className="navbar font-20">
+            {
+                tabs.map((tab, index) => (
+                    <div className={index===activeIndex ? "navbar-item active" : "navbar-item"}>{tab}</div>
+                ))
+            }
         </div>
     </>
 }

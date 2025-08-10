@@ -58,7 +58,7 @@ function Background() {
     window.addEventListener("resize", handleResize);
     
     let lastTime = 0;
-  const desiredFPS = 30;
+  const desiredFPS = 20;
   const frameDuration = 1000 / desiredFPS;
 
     const animate = (time = 0) => {

@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from "react";
-import pfp from "../assets/pfpPlaceholder.jpg";
+import {forwardRef} from "react";
+import pfp from "../assets/japanPhoto.jpeg";
 import "../styles/Hero.css";
 import Tag from "./Tag";
 
-function Hero() {
-    return <>
-        <div className="hero">
+const Hero = forwardRef<HTMLDivElement, {}>((props, ref) => {
+    return (
+        <div className="hero" ref={ref}>
         <div className='hero-left'>
             <p className="font-64 margin-0">Hi, I'm</p>
             <p className="font-128 waikei"><b>Wai Kei</b></p>
@@ -17,9 +17,9 @@ function Hero() {
             </div>
         </div>
         
-        <img src={pfp} alt="A picture of me!"></img>
+        <img src={pfp} alt="A picture of me!" className="pfp"></img>
         </div>
-    </>
-}
+    )
+})
 
 export default Hero;
