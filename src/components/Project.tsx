@@ -15,8 +15,8 @@ const Project: React.FC<ProjectProps> = ({title, desc, imageURL, alt, tags, reve
     return <div className="project-pair">
         {
             !reverse ? 
-            <img src="https://i.imgur.com/bJ5PrKf.png" 
-                alt="A picture of a maze in Source Academy" 
+            <img src={imageURL} 
+                alt={alt}
                 className="project-image"/>
             : <></>
         }
@@ -28,7 +28,7 @@ const Project: React.FC<ProjectProps> = ({title, desc, imageURL, alt, tags, reve
             <div className="project-tag-container">
                 {
                     tags.map((tag)=> (
-                        <Tag name={tag} size="16px" type="small"></Tag>
+                        <Tag key={tag} name={tag} size="16px" type="small"></Tag>
                     ))
                 }
             </div>

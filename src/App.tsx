@@ -5,6 +5,8 @@ import Background from './components/Background';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
+import ScrollAnimate from './components/ScrollAnimate';
 
 
 
@@ -23,8 +25,14 @@ function App() {
         <div className="content animated" ref={contentRef}>
           <Navbar></Navbar>
           <Hero></Hero>
-          <TechStack></TechStack>
-          <Projects></Projects>
+          <Experience></Experience>
+
+            <TechStack></TechStack>
+
+
+            <Projects></Projects>
+
+          
       </div>
       </div>
       

@@ -1,0 +1,51 @@
+.career-parent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 120px;
+}
+
+.timeline-parent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 24px;
+    position: relative;
+}
+
+.job-parent {
+    display: flex;
+    align-items: center;
+    margin: 24px 0px;
+}
+
+.job-desc {
+    background-color: rgba(82, 114, 164, 0.5);
+    border-radius: 16px;
+    padding: 16px 24px;
+    width: 100%;
+}
+
+.job-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.job-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: white;
+    margin: 0px 48px 0px 32px;
+    z-index: 3;
+}
+
+.line {
+    position: absolute;
+    background-color: white;
+    width: 4px;
+    z-index: 1;
+}

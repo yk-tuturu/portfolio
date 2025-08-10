@@ -1,0 +1,39 @@
+/* Hidden state */
+.scroll-animate.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.scroll-animate {
+  display: inline-block; /* or contents if possible */
+  width: auto;
+}
+
+/* Example animations */
+.fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.slide-left {
+  animation: slideLeft 0.5s ease forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 0.6s ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}

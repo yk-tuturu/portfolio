@@ -42,6 +42,11 @@ p {
   font-size: 16px;
 }
 
+.font-20 {
+  font-size: 20px;
+}
+
+
 .font-24 {
   font-size: 24px;
 }
@@ -113,6 +118,16 @@ p {
 
 .mt-5 {
   margin-top: 3rem;
+}
+
+ul, ol {
+  margin-left: 0;       /* Remove browser's default margin */
+  padding-left: 1em;    /* Reduce space before bullet/number */
+}
+
+li {
+  list-style-position: inside; /* Bullet appears inside content box */
+  margin-bottom: 0.25rem;
 }
 
 .animated {

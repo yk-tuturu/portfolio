@@ -12,7 +12,7 @@ function Background() {
 
   const particles: Particle[] = [];
 
-  const PARTICLE_COUNT = 50; // number of particles
+  const PARTICLE_COUNT = 80; // number of particles
   const MAX_DISTANCE = 200; // distance to draw lines
 
   useEffect(() => {
@@ -61,7 +61,7 @@ function Background() {
         // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(125, 156, 204, 0.7)";
+        ctx.fillStyle = "rgba(145, 175, 220, 1)";
         ctx.fill();
       }
 
@@ -73,7 +73,7 @@ function Background() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < MAX_DISTANCE) {
-            ctx.strokeStyle = `rgba(125, 156, 204, ${(1 - dist / MAX_DISTANCE) * 0.8})`;
+            ctx.strokeStyle = `rgba(145, 175, 220, ${(1 - dist / MAX_DISTANCE)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);

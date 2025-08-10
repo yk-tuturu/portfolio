@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 7fr 5fr;
   column-gap: 40px;
-  margin-top: 36px;
+  margin-top: 96px;
 }
 
 .hero img {
