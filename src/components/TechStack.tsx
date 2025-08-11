@@ -14,7 +14,7 @@ type Category = "frontend" | "backend" | "other";
 
 type LogoCategories = Record<Category, Logo[]>
 
-const TechStack = forwardRef<HTMLDivElement, {}>((props, ref) => {
+const TechStack = forwardRef<HTMLDivElement, {}>((_, ref) => {
     const logos: LogoCategories = {
         frontend: [
             {

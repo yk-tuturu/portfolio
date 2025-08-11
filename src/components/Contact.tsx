@@ -2,7 +2,7 @@ import "../styles/Contact.css"
 import { sprites } from "../Logos";
 import {forwardRef} from "react"
 
-const Contact = forwardRef<HTMLDivElement, {}>((props, ref) => {
+const Contact = forwardRef<HTMLDivElement, {}>((_, ref) => {
     return <div className="contact-parent" ref={ref}>
         <p className="font-36 margin-0 bold">Contact</p>
         <p className="font-20 margin-0 light">Hit me up and bring your ideas to life!</p>

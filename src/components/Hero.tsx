@@ -3,7 +3,7 @@ import pfp from "../assets/japanPhoto.jpeg";
 import "../styles/Hero.css";
 import Tag from "./Tag";
 
-const Hero = forwardRef<HTMLDivElement, {}>((props, ref) => {
+const Hero = forwardRef<HTMLDivElement, {}>((_, ref) => {
     return (
         <div className="hero" ref={ref}>
         <div className='hero-left'>

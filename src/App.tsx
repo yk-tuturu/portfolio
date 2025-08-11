@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import type { RefObject } from 'react';
 import Navbar from './components/Navbar';
 import Typewriter from './components/Typewriter';
 import Background from './components/Background';

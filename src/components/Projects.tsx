@@ -17,7 +17,7 @@ type Category = "Web" | "Mobile" | "Games"
 
 type ProjectCategories = Record<Category, Project[]>
 
-const Projects = forwardRef<HTMLDivElement, {}>((props, ref) => {
+const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
     const tabNames: Category[] = ['Web', 'Mobile', 'Games'];
     const [activeTab, setActiveTab] = useState<Category>('Web');
 

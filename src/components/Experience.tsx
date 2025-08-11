@@ -15,7 +15,7 @@ type MeasurableBoxHandle = {
   getImageRect: () => DOMRect | null;
 };
 
-const Experience = forwardRef<HTMLDivElement, {}>((props, ref) => {
+const Experience = forwardRef<HTMLDivElement, {}>((_, ref) => {
     const jobs: JobInfo[] = [
         {
             employer: "School Of Computing, NUS",
