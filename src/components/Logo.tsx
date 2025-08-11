@@ -10,8 +10,6 @@ const Logo: React.FC<LogoProps> = ({name, source}) => {
     const [hovered, setHovered] = useState(false);
     const imgRef = useRef<HTMLImageElement>(null);
 
-    const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
-
     function onMouseEnter() {
         setHovered(true);
     }

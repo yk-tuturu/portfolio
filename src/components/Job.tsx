@@ -1,4 +1,4 @@
-import React, {useState, forwardRef, useRef, useImperativeHandle} from "react";
+import { forwardRef, useRef, useImperativeHandle} from "react";
 import "../styles/career.css";
 import FadeUp from "./animators/FadeUp";
 import SlideLeft from "./animators/SlideLeft";

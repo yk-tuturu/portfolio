@@ -1,7 +1,6 @@
 import {useState, forwardRef} from "react";
 import "../styles/projects.css";
 import Project from "./Project";
-import FadeUp from "./animators/FadeUp";
 import SlideLeft from "./animators/SlideLeft";
 
 type Project = {
