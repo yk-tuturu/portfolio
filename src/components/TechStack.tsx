@@ -26,7 +26,9 @@ const TechStack = forwardRef<HTMLDivElement, {}>((props, ref) => {
             { name: "JavaScript", source: sprites.jsLogo},
             { name: "TypeScript", source: sprites.tsLogo},
             { name: "Bootstrap", source: sprites.bootstrap},
-            { name: "Figma", source: sprites.figma}
+            { name: "Figma", source: sprites.figma},
+            { name: "Flask", source: sprites.flask},
+            { name: "Python", source: sprites.python}
         ],
         backend: [
             {

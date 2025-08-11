@@ -49,12 +49,26 @@ useEffect(() => {
   const onScroll = () => {
     if (!refs.current) return;
 
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const offset = 20;
+    // if at bottom, set it to the contacts sections immediately
+    if (scrollTop + windowHeight >= docHeight - offset) {
+      setTopmostIndex(4);
+      return;
+    }
+
     const visibleElements = refs.current
       .map((el, i) => {
         if (!el) return null;
         const rect = el.getBoundingClientRect();
+        console.log(i);
+        console.log(rect.bottom);
+        console.log(rect.top);
         // Check if element is at least partially visible vertically
-        if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+        if (rect.bottom >= 80 && rect.top <= window.innerHeight) {
+          
           return { index: i, top: rect.top };
         }
         return null;
@@ -82,6 +96,19 @@ useEffect(() => {
     window.removeEventListener("scroll", onScroll);
   };
 }, [showContent]);
+
+const scrollToSection = (index: number) => {
+    if (!refs.current || !refs.current[index]) return;
+
+    const headerOffset = 80; // height of fixed header in px
+    const elementPosition = refs.current[index].getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  };
   
 
   return (
@@ -92,7 +119,7 @@ useEffect(() => {
         <div className="animated hide" ref={contentRef}>
           {
             showContent && <>
-              <Navbar activeIndex={topmostIndex}></Navbar>
+              <Navbar activeIndex={topmostIndex} scrollIntoView={scrollToSection}></Navbar>
               <div className="content">
               <Hero ref={(el) => { refs.current[0] = el;}}></Hero>
               <Experience ref={(el) => { refs.current[1] = el;}}></Experience>

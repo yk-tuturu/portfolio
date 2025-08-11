@@ -19,6 +19,7 @@
 .navbar-item {
     padding: 8px 24px;
     color: #acb5c5;
+    cursor: pointer;
 }
 
 .navbar-item.active {
