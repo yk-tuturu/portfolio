@@ -9,7 +9,7 @@ const Hero = forwardRef<HTMLDivElement, {}>((_, ref) => {
         <div className='hero-left'>
             <p className="font-64 margin-0">Hi, I'm</p>
             <p className="font-128 waikei"><b>Wai Kei</b></p>
-            <p className="font-24 light subtitle">Second year CS student @ <b>NUS</b> | Frontend Developer | Hobbyist Game Maker</p>
+            <p className="font-24 light subtitle">2nd year CS student @ <b className="bold">NUS</b> | Full-Stack Web Developer | Hobbyist Game Maker</p>
             <div className="tagList">
                 <Tag name="React"></Tag>
                 <Tag name="NodeJS"></Tag>
