@@ -27,8 +27,7 @@ const TechStack = forwardRef<HTMLDivElement, {}>((_, ref) => {
             { name: "TypeScript", source: sprites.tsLogo},
             { name: "Bootstrap", source: sprites.bootstrap},
             { name: "Figma", source: sprites.figma},
-            { name: "Flask", source: sprites.flask},
-            { name: "Python", source: sprites.python}
+
         ],
         backend: [
             {
@@ -37,7 +36,9 @@ const TechStack = forwardRef<HTMLDivElement, {}>((_, ref) => {
             }, 
             { name: "Express", source: sprites.express},
             { name: "MySQL", source: sprites.mysql},
-            { name: "MongoDB", source: sprites.mongodb}
+            { name: "MongoDB", source: sprites.mongodb},
+            { name: "Flask", source: sprites.flask},
+            { name: "Python", source: sprites.python}
         ],
         other: [
             {
