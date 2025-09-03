@@ -63,6 +63,15 @@ const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
         ],
         Mobile: [
             {
+                title: "SafePost",
+                desc: "AI-powered mobile app for data protection and a safer digital world. Harness LLMs to detect and redact information, all run locally on your device to ensure maximum privacy.",
+                imageURL: "https://i.imgur.com/8QpJWyI.png",
+                alt: "SafePost logo",
+                tags: ["React Native", "ExecuTorch", "HuggingFace"],
+                githubLink: "https://github.com/yk-tuturu/safepost",
+                externalLink: "https://devpost.com/software/safepost?ref_content=user-portfolio&ref_feature=in_progress"
+            },
+            {
                 title: "Pawgress",
                 desc: "A full-stack productivity app to encourage users to stay focussed during study sessions, with the companion of a virtual pet cat",
                 imageURL: "https://i.imgur.com/jew8ZHZ.png",
@@ -71,6 +80,7 @@ const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
                 githubLink: "https://github.com/yk-tuturu/study-app",
                 externalLink: ""
             }
+            
         ],
         Games: [
             {
