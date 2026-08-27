@@ -57,7 +57,7 @@ const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
                 alt: "A picture of my portfolio website",
                 tags: ["React", "TypeScript"],
                 githubLink: "https://github.com/yk-tuturu/portfolio",
-                externalLink: "https://yk-tuturu.github.io/portfolio/"
+                externalLink: "https://portfolio.ykkoh.com/"
             }
 
         ],

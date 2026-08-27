@@ -18,17 +18,24 @@ type MeasurableBoxHandle = {
 const Experience = forwardRef<HTMLDivElement, {}>((_, ref) => {
     const jobs: JobInfo[] = [
         {
+            employer: "Garuda Robotics",
+            jobTitle: "Full-Stack Software Engineer Intern",
+            duration: "Jan 2026 - Jun 2026",
+            desc: ["Led the UI/architecture redesign migrating a UAV flight-ops platform from 2D to a [b]live 3D geospatial environment[/b] using [b]CesiumJS[/b] — handling coordinate transforms, 3D Tiles, and real-time entity rendering", "Engineered a [b]telemetry pipeline[/b] to ingest and normalize real-time data from [b]multiple hardware sources[/b] into a unified feed powering the web-based flight control system.", "Built an end-to-end [b]Playwright[/b] testing framework from scratch across multiple frontend applications — tackling [b]test data lifecycle and authentication challenges[/b] — and authored documentation that drove team-wide adoption."],
+            imgURL: sprites.garuda,
+        },
+        {
             employer: "School Of Computing, NUS",
             jobTitle: "Teaching Assistant",
-            duration: "Aug 2025 - Present",
-            desc: ["Running weekly tutorial sessions for CS1101S Programming Methodology", "Preparing revision materials and assisting students through consult sessions"],
+            duration: "Aug 2025 - Nov 2025",
+            desc: ["Ran weekly tutorial sessions for CS1101S Programming Methodology", "Prepared revision materials and assisting students through consult sessions"],
             imgURL: sprites.nusLogo
         }, 
         {
             employer: "Source Academy",
             jobTitle: "Frontend Engineer",
             duration: "Jan 2025 - Jun 2025",
-            desc: ["Designed a [b]programming-based minigame system[/b] for Source Academy, enhancing the learning experience for [b]hundreds[/b] of CS1101S students"],
+            desc: ["Designed a [b]programming-based minigame system[/b] for Source Academy, enhancing the learning experience for [b]hundreds[/b] of CS1101S students", "Implemented a maze navigation module with [b]raycasting-based collision detection[/b] and reusable puzzle-generation functions"],
             imgURL: sprites.source
         },
         {
