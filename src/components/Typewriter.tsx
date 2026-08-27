@@ -23,7 +23,7 @@ const Typewriter: React.FC<TypewriterProps> = ({showContent}) => {
     let counter = 0;
 
     useEffect(() => {
-        let timeout: NodeJS.Timeout;
+        let timeout: ReturnType<typeof setTimeout>;
 
         if (phase === "intro") {
             timeout = setTimeout(() => {
