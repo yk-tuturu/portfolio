@@ -23,6 +23,25 @@ const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
 
     const projects: ProjectCategories = {
         Web: [
+            
+            {
+                title: "NUSMods RAG Advisor",
+                desc: "A RAG-powered AI advisor that grounds conversational answers in course data and student reviews scraped from NUSMods, helping students make informed decisions about their modules",
+                imageURL: "https://imgur.com/wtDH46t.png",
+                alt: "A picture of a maze puzzle in Source Academy",
+                tags: ["React", "TypeScript", "Elixir"],
+                githubLink: "https://github.com/yk-tuturu/nusmods-rag",
+                externalLink: "https://nusadvice.ykkoh.com/"
+            }, 
+            {
+                title: "Project Desmos",
+                desc: "A program to render any image in the graphing calculator Desmos, by converting image edges to Bezier curves",
+                imageURL: "https://i.imgur.com/2EfrPpD.png",
+                alt: "A picture rendered in the graphing calculator Desmos",
+                tags: ["React", "Express", "Desmos API"],
+                githubLink: "https://github.com/yk-tuturu/project-desmos-new",
+                externalLink: "https://desmos.ykkoh.com/"
+            }, 
             {
                 title: "Source Academy Minigame System",
                 desc: "Designed a programming-based minigame system that integrates with existing game structure seamlessly",
@@ -40,15 +59,6 @@ const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
                 tags: ["React", "JavaScript", "NodeJS", "MongoDB"],
                 githubLink: "https://github.com/Shujin05/QuicKart",
                 externalLink: ""
-            }, 
-            {
-                title: "Project Desmos",
-                desc: "A program to render any image in the graphing calculator Desmos, by converting image edges to Bezier curves",
-                imageURL: "https://i.imgur.com/2EfrPpD.png",
-                alt: "A picture rendered in the graphing calculator Desmos",
-                tags: ["Flask", "Python", "Desmos API"],
-                githubLink: "https://github.com/yk-tuturu/project_desmos",
-                externalLink: "https://youtu.be/B3ZMC8AW_zM"
             }, 
             {
                 title: "This Website",
@@ -91,6 +101,15 @@ const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
                 tags: ["Unity", "FMOD"],
                 githubLink: "https://github.com/yk-tuturu/REEL",
                 externalLink: "https://luhdurr.itch.io/reel"
+            }, 
+            {
+                title: "Project Gamelan",
+                desc: "A 7k rhythm game inspired by Indonesian Gamelan music. Explore Javanese music and culture through a blend of rhythm action and narrative pieces.",
+                imageURL: "https://imgur.com/z76y8AK.png",
+                alt: "Rhythm game interface for gamelan",
+                tags: ["Unity"],
+                githubLink: "https://github.com/yk-tuturu/Project-Gamelan",
+                externalLink: "https://yk-tuturu.itch.io/yogyakarta"
             }, 
             {
                 title: "SharkBeat Cafe",

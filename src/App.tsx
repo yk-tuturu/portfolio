@@ -122,9 +122,9 @@ const scrollToSection = (index: number) => {
               <div className="content">
               <Hero ref={(el) => { refs.current[0] = el;}}></Hero>
               <Experience ref={(el) => { refs.current[1] = el;}}></Experience>
-
-              <TechStack ref={(el) => { refs.current[2] = el;}}></TechStack>
               <Projects ref={(el) => { refs.current[3] = el;}}></Projects>
+              <TechStack ref={(el) => { refs.current[2] = el;}}></TechStack>
+              
               <Contact ref={(el) => { refs.current[4] = el;}}></Contact>
               </div>
               
