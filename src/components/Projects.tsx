@@ -51,15 +51,15 @@ const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
                 githubLink: "https://github.com/source-academy/frontend",
                 externalLink: "https://sourceacademy.org/playground"
             }, 
-            {
-                title: "QuicKart",
-                desc: "A full-stack online minimart for users to exchange vouchers for grocery supplies, with a dedicated admin panel for store owners to track inventory and manage orders.",
-                imageURL: "https://i.imgur.com/FV66war.png",
-                alt: "A picture of a minimart interface",
-                tags: ["React", "JavaScript", "NodeJS", "MongoDB"],
-                githubLink: "https://github.com/Shujin05/QuicKart",
-                externalLink: ""
-            }, 
+            // {
+            //     title: "QuicKart",
+            //     desc: "A full-stack online minimart for users to exchange vouchers for grocery supplies, with a dedicated admin panel for store owners to track inventory and manage orders.",
+            //     imageURL: "https://i.imgur.com/FV66war.png",
+            //     alt: "A picture of a minimart interface",
+            //     tags: ["React", "JavaScript", "NodeJS", "MongoDB"],
+            //     githubLink: "https://github.com/Shujin05/QuicKart",
+            //     externalLink: ""
+            // }, 
             {
                 title: "This Website",
                 desc: "Yes. The website you are looking at right now.",
@@ -95,7 +95,7 @@ const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
         Games: [
             {
                 title: "REEL",
-                desc: "Discover strange fish on a distant alien planet in REEL, a 2D idle game made by a team of four. Reached 17k plays on itch.io and over 100 positive reviews",
+                desc: "Discover strange fish on a distant alien planet in REEL, a 2D idle game made by a team of four. Reached 20k plays on itch.io and over 100 positive reviews",
                 imageURL: "https://i.imgur.com/8RhUdBp.jpeg",
                 alt: "A picture of the REEL game logo",
                 tags: ["Unity", "FMOD"],
