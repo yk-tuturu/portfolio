@@ -7,9 +7,9 @@
 
 .hero img {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* fills space while keeping aspect ratio */
-  border-radius: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .waikei {
@@ -45,4 +45,33 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  .hero-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .waikei {
+    line-height: 1.15;
+    transform: none;
+  }
+
+  .hero img {
+    max-width: 240px;
+    max-height: 240px;
+    margin: 0 auto;
+  }
+
+  .tagList {
+    justify-content: center;
+  }
 }

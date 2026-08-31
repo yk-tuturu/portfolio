@@ -25,3 +25,17 @@
 .navbar-item.active {
     color: white
 }
+
+@media (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 8px;
+        gap: 4px;
+    }
+
+    .navbar-item {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}

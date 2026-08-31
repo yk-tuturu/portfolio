@@ -47,3 +47,15 @@
 .tech-logo-img.hover {
     transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+    .techstack-container {
+        margin-top: 64px;
+    }
+
+    .tech-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+}

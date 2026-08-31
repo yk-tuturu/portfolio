@@ -93,7 +93,6 @@ const Experience = forwardRef<HTMLDivElement, {}>((_, ref) => {
             <div className="timeline-parent" ref={parentRef}>
                 <div className="line" ref={lineRef} style={{
                     top: "0px",
-                    left: "72px",
                     height: maxHeight + 'px',
                     transform: `scaleY(${lineScale})`,
                     transformOrigin: "top",

@@ -27,3 +27,9 @@
 .contact-logo-container img:hover {
     transform: scale(1.2);
 }
+
+@media (max-width: 768px) {
+    .contact-parent {
+        margin-top: 64px;
+    }
+}
