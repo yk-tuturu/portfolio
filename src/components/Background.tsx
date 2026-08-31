@@ -13,7 +13,14 @@ function Background() {
   const animationFrameIdRef = useRef<number>(0);
   const MAX_DISTANCE = 200;
   const MAX_DISTANCE_SQ = MAX_DISTANCE * MAX_DISTANCE;
-  const PARTICLE_COUNT = 80;
+  const MIN_PARTICLES = 24;
+  const MAX_PARTICLES = 80;
+  const REFERENCE_AREA = 1440 * 800; // area at which MAX_PARTICLES looks right
+
+  const getParticleCountForArea = (width: number, height: number) => {
+    const scaled = Math.round((MAX_PARTICLES * (width * height)) / REFERENCE_AREA);
+    return Math.min(MAX_PARTICLES, Math.max(MIN_PARTICLES, scaled));
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -24,28 +31,33 @@ function Background() {
     let width = window.innerWidth;
     let height = window.innerHeight;
 
+    const syncParticleCount = () => {
+      const targetCount = getParticleCountForArea(width, height);
+      const particles = particlesRef.current;
+
+      if (particles.length < targetCount) {
+        for (let i = particles.length; i < targetCount; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 1.3,
+            vy: (Math.random() - 0.5) * 1.3,
+          });
+        }
+      } else if (particles.length > targetCount) {
+        particles.length = targetCount;
+      }
+    };
+
     // Initialize canvas size
     const setCanvasSize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
+      syncParticleCount();
     };
     setCanvasSize();
-
-    // Initialize particles only once
-    if (particlesRef.current.length === 0) {
-      const particles: Particle[] = [];
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 1.3,
-          vy: (Math.random() - 0.5) * 1.3,
-        });
-      }
-      particlesRef.current = particles;
-    }
 
     // Resize handler with debounce to reduce event firing frequency
     let resizeTimeout: ReturnType<typeof setTimeout>;
@@ -70,9 +82,10 @@ function Background() {
       ctx.clearRect(0, 0, width, height);
 
       const particles = particlesRef.current;
+      const particleCount = particles.length;
 
       // Move and draw particles
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
+      for (let i = 0; i < particleCount; i++) {
         const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
@@ -87,8 +100,8 @@ function Background() {
       }
 
       // Draw lines between close particles
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
-        for (let j = i + 1; j < PARTICLE_COUNT; j++) {
+      for (let i = 0; i < particleCount; i++) {
+        for (let j = i + 1; j < particleCount; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const distSq = dx * dx + dy * dy;
