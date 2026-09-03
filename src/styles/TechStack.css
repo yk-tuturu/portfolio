@@ -6,14 +6,13 @@
 .tech-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     background-color: rgba(63, 91, 136, 0.378);
     border-radius: 32px;
-    padding: 16px 32px;
+    padding: 24px 32px;
     margin-top: 8px;
-    transition: max-height 0.3s ease;
-    max-height: 95px;
-    overflow: hidden;
+    gap: 16px 24px;
 }
 
 .tech-logo-img {
@@ -27,7 +26,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-right: 24px;
 }
 
 .caption {
@@ -54,8 +52,7 @@
     }
 
     .tech-container {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
+        padding: 20px 24px;
+        gap: 12px 16px;
     }
 }

@@ -10,7 +10,8 @@ import Contact from './components/Contact';
 
 function App() {
   const contentRef = useRef<HTMLDivElement>(null);
-  const [showTypewriter, setShowTypewriter] = useState(true);
+  // Typewriter intro disabled for now — keeping the component and logic intact, just not rendering it.
+  const [showTypewriter, setShowTypewriter] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
   const refs = useRef<(HTMLDivElement | null)[]>([]);
@@ -22,6 +23,11 @@ function App() {
     contentRef?.current?.classList.remove("hide");
     contentRef?.current?.classList.add("show");
   }
+
+    useEffect(() => {
+      // Typewriter is hidden, so show content immediately instead of waiting on its callback.
+      if (!showTypewriter) enableContent();
+    }, []);
 
     useEffect(() => {
       const contentEl = contentRef.current;
