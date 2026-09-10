@@ -43,13 +43,13 @@ const Projects = forwardRef<HTMLDivElement, {}>((_, ref) => {
                 externalLink: "https://desmos.ykkoh.com/"
             }, 
             {
-                title: "Source Academy Minigame System",
-                desc: "Designed a programming-based minigame system that integrates with existing game structure seamlessly",
-                imageURL: "https://i.imgur.com/Mn68L7Q.png",
-                alt: "A picture of a maze puzzle in Source Academy",
-                tags: ["React", "TypeScript", "Elixir"],
-                githubLink: "https://github.com/source-academy/frontend",
-                externalLink: "https://sourceacademy.org/playground"
+                title: "Calendar Apple",
+                desc: "Can your Google Calendar become a video player?",
+                imageURL: "https://i.imgur.com/3RRwVzN.jpeg",
+                alt: "A picture of a Google Calendar",
+                tags: ["Python", "Playwright", "Browser Automation"],
+                githubLink: "https://github.com/yk-tuturu/calendar-apple",
+                externalLink: "https://www.youtube.com/watch?v=ggpb8buVtFk"
             }, 
             // {
             //     title: "QuicKart",
