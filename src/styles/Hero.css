@@ -32,6 +32,7 @@
     border-radius: 24px;
     padding: 8px 20px;
     margin-right: 16px;
+    margin-bottom: 16px;
 }
 
 .small-tag {
@@ -39,6 +40,7 @@
     border-radius: 24px;
     padding: 4px 16px;
     margin-right: 16px;
+    margin-bottom: 12px;
 }
 
 .tagList {
